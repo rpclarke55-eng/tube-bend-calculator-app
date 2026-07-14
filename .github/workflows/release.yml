@@ -1,4 +1,4 @@
-yamlname: 'Build & Release Desktop App'
+name: 'Build & Release Desktop App'
 
 on:
   push:
@@ -49,11 +49,6 @@ jobs:
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Add these two repo secrets later if you want signed macOS/Windows builds
-          # (unsigned builds still work fine for beta testing, users just click through
-          # an OS warning the first time they open the app):
-          # APPLE_CERTIFICATE / APPLE_CERTIFICATE_PASSWORD / APPLE_SIGNING_IDENTITY
-          # TAURI_SIGNING_PRIVATE_KEY / TAURI_SIGNING_PRIVATE_KEY_PASSWORD
         with:
           tagName: app-v__VERSION__
           releaseName: 'Tube Bend Calculator v__VERSION__'
